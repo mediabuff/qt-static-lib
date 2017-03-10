@@ -10,7 +10,7 @@ How to Use
 
 Install & Check
 ---
-Download from Release page, unpack to `D:\Qt57-VS2015`.
+Download from Release page, usage will be there.
 
 You can run `bin/qmake.exe -v` to get the build prefix.
 
