@@ -7,23 +7,14 @@ Qt uses LGPL. Be careful if you use this static library.
 
 How to Use
 ===
-Install
+
+Install & Check
 ---
 Download from Release page, unpack to `D:\Qt57-VS2015`.
 
 You can run `bin/qmake.exe -v` to get the build prefix.
 
-Build/Install environment:
-
-* Windows 10 Enterprise S 10240
-* Visual Studio 2015 Update 3 (MSVC 1900)
-* Windows XP target (SDK v7.1A)
-* Source dir: `D:\qt5`
-* Prefix dir: `D:\Qt57-VS2015`
-
-Hope it will work on your PC. :)
-
-Dependency
+Compile Dependency
 ---
 System libs:
 ```
@@ -57,14 +48,34 @@ Add this two line in your code:
 #include <QtPlugin>
 Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
 ```
-How Compiled
+
+You can only do cross compile for Windows XP in new system; you cannot use qmake.exe in Windows XP.
+
+How this Qt Compiled
 ===
-Download Qt source code.
 
-Download this repo and merge configs in the two files:
+Download Qt source code via Git.
+```shell
+git clone https://code.qt.io/qt/qt5.git qt5
+cd qt5
+git checkout v5.8.0
+cp init-repository ../
+git checkout v5.6.2
+cp ../init-repository .
+perl init-repository --module-subset=default,-qtwebkit,-qtwebkit-examples,-qtwebengine -f
+```
 
-* `qtbase/mkspecs/common/msvc-desktop.conf`
-* `qtbase/qmake/Makefile.win32`
+Modify configs in `qtbase/mkspecs/common/msvc-desktop.conf`:
+```Makefile
+DEFINES                += _USING_V110_SDK71_
+QMAKE_CFLAGS_RELEASE    = -O2 -MT
+QMAKE_CFLAGS_RELEASE_WITH_DEBUGINFO += -O2 -MT -Zi
+QMAKE_CFLAGS_DEBUG      = -Zi -MTd
+QMAKE_LFLAGS_CONSOLE    = /SUBSYSTEM:CONSOLE,5.01
+QMAKE_LFLAGS_WINDOWS    = /SUBSYSTEM:WINDOWS,5.01
+```
+
+Run `doconf.bat`.
 
 Build.
 
@@ -74,4 +85,5 @@ http://www.cnblogs.com/superbi/p/5672049.html (Chinese)
 
 History
 ===
-* `2016-08-16 08:30 ~ 15:40 (CST) -> Qt v5.7.0`
+* `2017-03-10 -> Qt v5.6.2 for MSVC 1910`
+* `2016-08-16 -> Qt v5.7.0 for MSVC 1900`
