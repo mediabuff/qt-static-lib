@@ -53,8 +53,8 @@ Run `nmake /nologo` to build.
 
 Reference
 ===
-https://wiki.qt.io/Building_Qt_5_from_Git
-http://www.cnblogs.com/superbi/p/5672049.html (Chinese)
+* https://wiki.qt.io/Building_Qt_5_from_Git
+* http://www.cnblogs.com/superbi/p/5672049.html (Chinese)
 
 History
 ===

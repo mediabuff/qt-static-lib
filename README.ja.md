@@ -53,8 +53,8 @@ QMAKE_LFLAGS_WINDOWS    = /SUBSYSTEM:WINDOWS,5.01
 
 参照
 ===
-https://wiki.qt.io/Building_Qt_5_from_Git
-http://www.cnblogs.com/superbi/p/5672049.html (中国語)
+* https://wiki.qt.io/Building_Qt_5_from_Git
+* http://www.cnblogs.com/superbi/p/5672049.html (中国語)
 
 記録
 ===
