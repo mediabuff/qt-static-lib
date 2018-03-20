@@ -1,7 +1,9 @@
 ﻿# Qt-Static-Library
-*Languages: [English](README.md), [简体中文](README.zh-cn.md), [正體中文](README.zh-tw.md), [日本語](README.ja.md).*
 
 Statically built library archive of Qt framework opensource version.
+
+MSVC 1910+ (VS 2017) DEPRECATED Win XP support, always compile FAIL widh SDK v7.1A.
+Anyway, you can install VS 2015 tool chain in VS 2017 installer.
 
 License
 ===
@@ -58,6 +60,7 @@ Reference
 
 History
 ===
+* `2018-03-20 -> Qt v5.6.3 for MSVC 1900`
 * `2017-04-26 -> Qt v5.6.2 for MSVC 1910 fix`
 * `2017-03-10 -> Qt v5.6.2 for MSVC 1910`
 * `2016-08-16 -> Qt v5.7.0 for MSVC 1900`
