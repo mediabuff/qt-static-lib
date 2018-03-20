@@ -2,8 +2,7 @@
 
 Statically built library archive of Qt framework opensource version.
 
-MSVC 1910+ (VS 2017) DEPRECATED Win XP support, always compile FAIL widh SDK v7.1A.
-Anyway, you can install VS 2015 tool chain in VS 2017 installer.
+* MSVC 1910+ (VS 2017) DEPRECATED Win XP support. It always compiles FAIL with SDK v7.1A. Anyway, you can install VS 2015 tool chain in VS 2017 installer.
 
 License
 ===
